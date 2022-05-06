@@ -24,7 +24,7 @@ void player::init() {
 }
 
 void player::get_name() {
-    cout << "What is thy nameth (Your name?)" << endl;
+    cout << "What is thy nameth?: ";
     getline(cin >> ws, name);
     cout << "Welcome " << name << ", son of Agaroth" << endl;
     cout << "Thy journey begins anew" << endl << endl;
@@ -33,7 +33,7 @@ void player::get_name() {
 void player::get_char_type() {
     cout << "Please choose your character type" << endl;
     cout << " 1. Warrior  |  2. Mage  | 3. Farmer   " << endl;
-    int x = 0;
+    int x;
     cin >> x;
     while (x > 3 || x < 1) {
         cout << "Wrong choice!\nPlease try again!" << endl;

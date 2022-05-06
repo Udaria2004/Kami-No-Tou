@@ -9,25 +9,20 @@
 using namespace std;
 
 int input_choice() {
-    cout << "0. Rules" << endl
-         << "1. New Game" << endl
-         << "2. Load Game" << endl
+    cout << "1. Rules" << endl
+         << "2. Play" << endl
          << "3. Exit" << endl
          << "Enter your choice: ";
     int x;
     cin >> x;
     while (true) {
         switch (x) {
-            case 0:
-                return x;
             case 1:
+                return x;
+            case 2:
                 cout << "Transporting you to another world" << endl;
                 slow_print("Please wait...", 200);
                 print_intro();
-                return x;
-            case 2:
-                cout << "Wake up!" << endl;
-                cout << "You still have not completed your mission!" << endl;
                 return x;
             case 3:
                 cout << "Exiting" << endl;
