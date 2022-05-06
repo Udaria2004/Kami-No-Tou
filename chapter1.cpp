@@ -6,17 +6,13 @@
 
 using namespace std;
 
-void print_chapter() {
+void chap1(player &p1) {
     print_intro();
     slow_print("Chapter 1", 100);
     cout << endl << endl;
     slow_print_file("story/chap1_1.txt", 50);
     cout << endl;
     pause();
-}
-
-void chap1(player &p1) {
-    print_chapter();
     p1.get_location();
     while (p1.location != 2) {
         cout << "You were supposed to go the guild first!" << endl;

@@ -2,15 +2,6 @@
 #include "utility.h"
 #include "guild.h"
 
-void print_chapter() {
-    print_intro();
-    slow_print("Chapter 2", 100);
-    cout << endl << endl;
-    slow_print_file("story/chap2_1.txt", 50);
-    cout << endl;
-    pause();
-}
-
 void house(player &p1) {
     print_line_break();
     cout << "Health Restored" << endl;
@@ -159,7 +150,12 @@ void woods(player &p1) // Fight Goblin
 }
 
 void chap2(player &p1) {
-    print_chapter();
+    print_intro();
+    slow_print("Chapter 2", 100);
+    cout << endl << endl;
+    slow_print_file("story/chap2_1.txt", 50);
+    cout << endl;
+    pause();
     while (true) {
         p1.get_location();
         if (p1.location == 0) //house
