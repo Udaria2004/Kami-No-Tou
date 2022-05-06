@@ -11,13 +11,13 @@ void chap1(player &p1) {
     slow_print("Chapter 1", 100);
     cout << endl << endl;
     slow_print_file("story/chap1_1.txt", 50);
-    cout << endl;
     pause();
-    p1.get_location();
+    print_intro();
+    p1.get_location(true);
     while (p1.location != 2) {
         p1.location = 0;
         cout << "You were supposed to go the guild first!" << endl;
-        p1.get_location();
+        p1.get_location(false);
     }
     print_intro();
     slow_print("You arrive at the guild and are greeted by the guilds manager\n", 50);
@@ -40,6 +40,7 @@ void chap1(player &p1) {
             cout << "Huh, what was that?" << endl;
     }
     pause();
+    print_intro();
     cout << endl << "Well, anyways here is your certificate" << endl << endl;
     print_file("ascii_art/certificate.txt");
     cout << endl;

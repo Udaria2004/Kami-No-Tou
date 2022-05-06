@@ -30,39 +30,41 @@ void player::init() {
 void player::get_name() {
     cout << "What is thy nameth?: " << flush;
     cin >> name;
-    cout << "Welcome " << name << ", son of Agaroth" << endl;
+    cout << "Welcome " << name << ", son of " << name << "oth" << endl;
     cout << "Thy journey begins anew" << endl << endl;
 }
 
 void player::get_char_type() {
     cout << "Please choose your character type:" << endl;
-    cout << "1. Warrior  |  2. Mage  | 3. Farmer   " << endl;
+    cout << "1. Warrior | 2. Mage | 3. Farmer" << endl;
     string x;
     while (true) {
-        cout << "Choice: ";
+        cout << endl << "Choice: ";
         cin >> x;
         if (x == "1" || x == "2" || x == "3") {
             c_type = stoi(x);
             assign_stats(c_type);
             break;
         } else
-            cout << "Think you are special eh? Try again." << endl;
+            cout << endl << "Think you are special eh? Try again." << endl;
     }
     cout << endl;
 }
 
-void player::get_location() {
+void player::get_location(bool print_locs) {
     vector<string> loc = {"House", "Woods", "Guild", "Tower"};
-    cout << endl << endl;
-    print_file("ascii_art/location.txt");
-    cout << endl << endl;
-    cout << "Current Location: " << loc[location] << endl << endl;
+    if (print_locs) {
+        cout << endl << endl;
+        print_file("ascii_art/location.txt");
+        cout << endl << endl;
+        cout << "Current Location: " << loc[location] << endl << endl;
+    }
     string temp;
     while (true) {
-        cout << "Where to? " << flush;
+        cout << endl << "Where to? " << flush;
         cin >> temp;
         if (temp == to_string(location))
-            cout << "You are already there!" << endl;
+            cout << endl << "You are already there!" << endl;
         else if (temp == "0" || temp == "1" || temp == "2" || temp == "3") {
             location = stoi(temp);
             break;

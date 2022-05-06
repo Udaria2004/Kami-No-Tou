@@ -7,7 +7,7 @@ using namespace std;
 void guild(player &p1) {
     print_intro();
     print_file("ascii_art/guild.txt");
-    cout << "Welcome back!" << endl << "Do you want to accept the quest?" << endl;
+    cout << endl << "Welcome back!" << endl << "Do you want to accept the quest? ";
     char ch;
     cin >> ch;
     ch = toupper(ch);

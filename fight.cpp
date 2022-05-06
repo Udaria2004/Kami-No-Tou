@@ -4,45 +4,39 @@
 
 using namespace std;
 
-int fight(player p1, int edmg, int ct) {
+int fight(player p1, int ehp) {
+    print_intro();
     print_file("ascii_art/goblin.txt"); //use the file opening function
     cout << endl;
-    cout << endl << "Enemy Health: " << p1.player_stat.hp << endl << endl;
     int choice = 1; // Choice of fighting, 1 ,2 ,3 ,4
-    int flag = 0;
-    while (p1.player_stat.hp > 0) //if health is more than 0 keep the fight going
+    while (true) //if health is more than 0 keep the fight going
     {
-        if (flag > 0) // already showed before hence not to show again the first time. appears next time
-            cout << endl << "Enemy Health: " << p1.player_stat.hp << endl << endl;
-        flag = flag + 1;
-        cout << "Your turn: " << endl;
+        cout << endl << "Enemy Health: " << ehp << endl << endl;
         p1.print_stats();
-        cout << "1. Attack" << endl << "2. Magic" << endl << "3. Items" << endl << "4. Surrender" << endl;
+        cout << "Your turn (1. Attack | 2. Magic | 3. Items | 4. Surrender): ";
         cin >> choice;
         while (choice > 4 || choice < 1) //loop for re input wrong choice
         {
             cout << endl << "Wrong choice, please input again: ";
             cin >> choice;
-            if (choice == 1 || choice == 2 || choice == 3 || choice == 4) break;
+            if (choice == 1 || choice == 2 || choice == 3 || choice == 4)
+                break;
         }
         if (choice == 1) //damage of attack 1
         {
-            int random = rand() % 10;
-            p1.player_stat.hp = p1.player_stat.hp - (p1.player_stat.damage * random);
+            int random = rand() % 5;
+            ehp = ehp - (p1.player_stat.damage * random);
             cout << endl << "Your attack did " << (p1.player_stat.damage * random) << " damage!" << endl;
-        }
-        if (choice == 2) // Restore health
+        } else if (choice == 2) // Restore health
         {
             int choice2;
-            bool flag1 = true;
             if (p1.player_stat.mp > 20) {
                 cout << endl << "1. Restore Health (MP: -25): ";
-                cin >> choice2;
-                while (choice2 != 1) {
-                    cout << endl << "Wrong Choice, input again: ";
+                while (true) {
                     cin >> choice2;
                     if (choice2 == 1)
                         break;
+                    cout << endl << "Wrong Choice, input again: ";
                 }
                 cout << endl << endl;
                 if (choice2 == 1) {
@@ -55,41 +49,44 @@ int fight(player p1, int edmg, int ct) {
                     }
                 }
             } else cout << "Not enough Mana" << endl;
-        }
-        char potion_choice;
-        if (choice == 3) // use potion to restore health
+        } else if (choice == 3) // use potion to restore health
         {
+            char potion_choice;
             if (p1.player_stat.potion > 0) {
                 cout << "Use potion? ";
                 cin >> potion_choice;
                 potion_choice = toupper(potion_choice);
                 if (potion_choice == 'Y') {
-                    p1.player_stat.potion = p1.player_stat.potion - 1;
+                    p1.player_stat.potion--;
                     cout << "Restored Health and MP" << endl;
                     p1.player_stat.hp = 100;
-                    if (ct == 1) p1.player_stat.mp = 50;
-                    if (ct == 2) p1.player_stat.mp = 100;
-                    if (ct == 3) p1.player_stat.mp = 50;
+                    if (p1.c_type == 1)
+                        p1.player_stat.mp = 50;
+                    else if (p1.c_type == 2)
+                        p1.player_stat.mp = 100;
+                    else if (p1.c_type == 3)
+                        p1.player_stat.mp = 50;
                 }
 
-            } else cout << "You do not have enough potions";
+            } else cout << "You do not have enough potions" << endl;
 
-        }
-        if (choice == 4) // surrender
+        } else if (choice == 4) // surrender
         {
             cout << "You surrendered!" << endl;
             cout << "The goblin killed you and had a satisfying meal" << endl;
             cout << "Game Over" << endl;
             exit(1);
         }
-        if (p1.player_stat.hp > 0) {
+        if (ehp > 0) {
             cout << endl << "Goblin's turn" << endl;
-            int losthp = (rand() % 10 * 2);
-            p1.player_stat.hp = p1.player_stat.hp - losthp;
-            cout << "Goblin attacks you" << endl << "HP lost: " << losthp << endl;
+            int lost_hp = (rand() % 10 * 4);
+            p1.player_stat.hp -= lost_hp;
+            cout << "Goblin attacks you" << endl << "HP lost: " << lost_hp << endl;
         }
-        if (p1.player_stat.hp < 1)
+        if (ehp <= 0) {
             cout << "You beat the goblin!" << endl;
+            break;
+        }
     }
     return 0;
 }

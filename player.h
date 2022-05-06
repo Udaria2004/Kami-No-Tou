@@ -28,7 +28,7 @@ public:
 
     void init();
 
-    void get_location();
+    void get_location(bool print_locs);
 };
 
 #endif

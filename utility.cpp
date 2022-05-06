@@ -27,9 +27,9 @@ void print_line_break() {
 }
 
 void pause() {
-    cin.ignore();
-    cout << "Press Enter to Continue";
-    cin.ignore();
+    cout << flush << "\nPress Enter to Continue";
+    cin.sync();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 void print_file(const string &path) {

@@ -6,7 +6,7 @@
 
 void house(player &p1) {
     print_line_break();
-    cout << "Health Restored" << endl;
+    cout << "Welcome home!\nHealth Restored" << endl;
     p1.player_stat.mp = 100;
     if (p1.c_type == 1)
         p1.player_stat.mp = 50;
@@ -14,7 +14,6 @@ void house(player &p1) {
         p1.player_stat.mp = 100;
     if (p1.c_type == 3)
         p1.player_stat.mp = 50;
-    print_line_break();
 }
 
 void woods(player &p1) // Fight Goblin
@@ -32,25 +31,31 @@ void woods(player &p1) // Fight Goblin
         cin >> ch;
         ch = toupper(ch);
         if (ch == 'Y') {
+            print_intro();
             slow_print_file("story/chap2_2.txt", 50);
+            pause();
             fight(p1, ehp, edamage);
-        } else //if no monsters found
-        {
-            cout << "No monsters found" << endl;
-            cout << "Would you like to search for items?" << endl;
-            cin >> ch;
-            ch = toupper(ch);
-            if (ch == 'Y') {
-                if (x > 4) {
-                    cout << "You found a potion" << endl;
-                    p1.player_stat.potion++;
-                } else
-                    cout << "Sorry, you found nothing :(" << endl;
-            }
+        } else {
             cout << "Returning home" << endl;
             p1.location = 0;
-            print_line_break();
         }
+    } else //if no monsters found
+    {
+        cout << "No monsters found" << endl;
+        cout << "Would you like to search for items? ";
+        cin >> ch;
+        cout << endl << endl;
+        ch = toupper(ch);
+        if (ch == 'Y') {
+            if (x > 4) {
+                cout << "You found a potion" << endl;
+                p1.player_stat.potion++;
+            } else {
+                cout << "Sorry, you found nothing :(" << endl;
+            }
+        }
+        cout << "Returning home" << endl;
+        p1.location = 0;
     }
 }
 
@@ -59,10 +64,10 @@ void chap2(player &p1) {
     slow_print("Chapter 2", 100);
     cout << endl << endl;
     slow_print_file("story/chap2_1.txt", 50);
-    cout << endl;
     pause();
     while (true) {
-        p1.get_location();
+        print_intro();
+        p1.get_location(true);
         if (p1.location == 0)
             house(p1);
         else if (p1.location == 1)
@@ -76,5 +81,6 @@ void chap2(player &p1) {
             chap3(p1);
             break;
         }
+        pause();
     }
 }
