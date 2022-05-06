@@ -15,6 +15,7 @@ void chap1(player &p1) {
     pause();
     p1.get_location();
     while (p1.location != 2) {
+        p1.location = 0;
         cout << "You were supposed to go the guild first!" << endl;
         p1.get_location();
     }
@@ -32,7 +33,7 @@ void chap1(player &p1) {
             cout << "Ah you came just on time" << endl;
             break;
         case 'N':
-            cout << "I swear i heard the blacksmiths tell me that you bought weapons recently because you couldn't "
+            cout << "I swear, I heard the blacksmiths tell me that you bought weapons recently because you couldn't "
                     "wait to become an adventurer" << endl;
             break;
         default :

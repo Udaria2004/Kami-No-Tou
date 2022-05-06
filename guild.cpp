@@ -5,8 +5,8 @@
 using namespace std;
 
 void guild(player &p1) {
+    print_intro();
     print_file("ascii_art/guild.txt");
-    print_line_break();
     cout << "Welcome back!" << endl << "Do you want to accept the quest?" << endl;
     char ch;
     cin >> ch;
