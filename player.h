@@ -11,7 +11,8 @@ struct stats {
 
 class player {
 public:
-    int location = 0;
+    int location = 0, c_type;
+    bool guild_quest = false;
     string name, char_type;
     stats player_stat;
 

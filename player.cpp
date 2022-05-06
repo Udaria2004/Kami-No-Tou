@@ -42,7 +42,8 @@ void player::get_char_type() {
         cout << "Choice: ";
         cin >> x;
         if (x == "1" || x == "2" || x == "3") {
-            assign_stats(stoi(x));
+            c_type = stoi(x);
+            assign_stats(c_type);
             break;
         } else
             cout << "Think you are special eh? Try again." << endl;
