@@ -1,7 +1,7 @@
 // Kami No Tou.cpp : This file contains the 'main' function. Program execution begins and ends here.
 
 #include <iostream>
-#include "Intro.h"
+#include "utility.h"
 #include "mainmenu.h"
 #include "char_creation.h"
 #include "classcreate.h"
@@ -28,7 +28,7 @@ int main() {
     string name;
     string location[4] = {"House", "Woods", "Guild", "Tower"};
     int location1 = 0;
-    intro();
+    print_intro();
     int charactertype = 0;
     int choice = mainmenu();
     if (choice == 1) {

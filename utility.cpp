@@ -1,13 +1,10 @@
-// Intromenu.cpp
-
-#include <iostream>
-#include "Intro.h"
-#include <string>
-#include <fstream>
+#include "utility.h"
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int intro() {
+void print_intro() {
+    clear_screen();
     ifstream fin;
     fin.open("intro.txt");
     if (fin.fail()) {
@@ -19,5 +16,8 @@ int intro() {
     while (getline(fin, line))
         cout << line << endl;
     fin.close();
-    return 0;
+}
+
+void clear_screen() {
+    system("clear");
 }
