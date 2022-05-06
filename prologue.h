@@ -2,6 +2,8 @@
 #ifndef PROLOUGE_H
 #define PROLOUGE_H
 
-void prologue();
+#include "player.h"
+
+void prologue(player p1);
 
 #endif

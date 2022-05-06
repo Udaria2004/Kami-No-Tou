@@ -1,32 +1,30 @@
 #include "bits/stdc++.h"
 #include "chapter1.h"
 #include "utility.h"
+#include "player.h"
 
 using namespace std;
 
-void chap1(int &location1) {
-    vector<string> location = {"House", "Woods", "Guild", "Tower"};
-    print_line_break();
-    print_file("ascii_art/location.txt");
-    print_line_break();
-    cout << "Current Location: " << location[location1] << endl;
+void print_chapter() {
+    print_intro();
+    slow_print("Chapter 1", 100);
+    cout << endl << endl;
+    slow_print_file("story/chap1_1.txt", 50);
     cout << endl;
-    cout << "Where to? " << flush;
-    cin >> location1;
-    cout << endl;
-    while (location1 != 2) {
-        if (location1 == 0)
-            cout << "You are already at home" << endl;
-        else
-            cout << endl << "You were supposed to go the guild!" << endl;
-        cin >> location1;
-        if (location1 == 2) break;
+    pause();
+}
+
+void chap1(player p1) {
+    print_chapter();
+    p1.get_location();
+    while (p1.location != 2) {
+        cout << "You were supposed to go the guild first!" << endl;
+        p1.get_location();
     }
-    cout << endl;
-    cout << "-----------------------------------------------------------------------------" << endl << endl;
-    cout << "You arrive at the guild and are greeted by the guilds manager" << endl;
+    print_intro();
+    slow_print("You arrive at the guild and are greeted by the guilds manager\n", 50);
     print_file("ascii_art/guild.txt");
-    cout << endl << "Welcome, are you here to sign to become an adventurer?" << endl;
+    slow_print("Welcome, are you here to sign to become an adventurer?\n", 50);
     cout << endl << "Hint: Press Y for positive interactions and N for negative interactions" << endl;
     char ch = 'Y';
     cin >> ch;
@@ -37,33 +35,16 @@ void chap1(int &location1) {
             cout << "Ah you came just on time" << endl;
             break;
         case 'N':
-            cout
-                    << "I swear i heard the blacksmiths tell me that you bought weapons recently because you couldn't wait to become an adventurer"
-                    << endl;
+            cout << "I swear i heard the blacksmiths tell me that you bought weapons recently because you couldn't "
+                    "wait to become an adventurer" << endl;
             break;
         default :
             cout << "Huh, what was that?" << endl;
     }
-    for (double i = 0; i < 999999000; i++) {
-    }
-    cout << endl << "Well, anyways here is your certificate" << endl;
+    pause();
+    cout << endl << "Well, anyways here is your certificate" << endl << endl;
     print_file("ascii_art/certificate.txt");
     cout << endl;
-    cout << "I suggest that you start practicing at the woods before taking any quests.";
-    cout << endl << "You can now go to your house to restore health or go to the forest to practice!";
-    cout << endl << "If you want to take a quest, you can go talk to me again later" << endl;
-    cout << "Thank you for taking your time at the adventurers guild. We hope you the very best. Au Revoir!" << endl;
-    cout << endl << "End of conversation" << endl
-         << "-----------------------------------------------------------------------------" << endl;
-    cout << "Enter c to continue...." << endl << endl;
-    char c = 'a';
-    cin >> c;
-    while (c != 'c') {
-        cout << "Did you mean to press 'c'" << endl;
-        cin >> c;
-        if (c == 'c') break;
-    }
-    if (c == 'c') {
-        cout << endl << "-----------------------------------------------------------------------------" << endl;
-    }
+    slow_print_file("story/chap1_2.txt", 50);
+    pause();
 }

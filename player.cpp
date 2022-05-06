@@ -10,7 +10,7 @@ void player::print_stats() {
          << "MP: " << player_stat.mp << endl
          << "Luck:" << player_stat.luck << endl
          << "Potions: " << player_stat.potion << endl
-         << "Damage: " << player_stat.damage << endl;
+         << "Damage: " << player_stat.damage << endl << endl;
 }
 
 void player::print_character_art() {
@@ -23,6 +23,8 @@ void player::init() {
     print_character_art();
     get_name();
     get_char_type();
+    print_stats();
+    pause();
 }
 
 void player::get_name() {
@@ -35,15 +37,36 @@ void player::get_name() {
 void player::get_char_type() {
     cout << "Please choose your character type:" << endl;
     cout << "1. Warrior  |  2. Mage  | 3. Farmer   " << endl;
-    char x;
+    string x;
     while (true) {
         cout << "Choice: ";
         cin >> x;
-        if (x == '1' || x == '2' || x == '3') {
-            assign_stats(x - '0');
+        if (x == "1" || x == "2" || x == "3") {
+            assign_stats(stoi(x));
             break;
         } else
             cout << "Think you are special eh? Try again." << endl;
+    }
+    cout << endl;
+}
+
+void player::get_location() {
+    vector<string> loc = {"House", "Woods", "Guild", "Tower"};
+    cout << endl << endl;
+    print_file("ascii_art/location.txt");
+    cout << endl << endl;
+    cout << "Current Location: " << loc[location] << endl << endl;
+    string temp;
+    while (true) {
+        cout << "Where to? " << flush;
+        cin >> temp;
+        if (temp == to_string(location))
+            cout << "You are already there!" << endl;
+        else if (temp == "0" || temp == "1" || temp == "2" || temp == "3") {
+            location = stoi(temp);
+            break;
+        } else
+            cout << endl << "Want to reach Mars huh?" << endl;
     }
 }
 

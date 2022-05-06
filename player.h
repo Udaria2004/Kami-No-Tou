@@ -11,6 +11,7 @@ struct stats {
 
 class player {
 public:
+    int location = 0;
     string name, char_type;
     stats player_stat;
 
@@ -25,6 +26,8 @@ public:
     void assign_stats(int type);
 
     void init();
+
+    void get_location();
 };
 
 #endif
