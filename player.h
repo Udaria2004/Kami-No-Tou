@@ -20,7 +20,7 @@ public:
 
     void get_name();
 
-    void print_character_art();
+    static void print_character_art();
 
     void assign_stats(int type);
 

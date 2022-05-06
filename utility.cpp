@@ -10,19 +10,24 @@ void print_intro() {
 }
 
 void clear_screen() {
-    cout << "\x1B[3J\x1B[H";
+    cout << "\033[2J\033[1;1H";
 }
 
 void slow_print(const string &text, int speed) {
     for (auto i: text) {
         cout << i;
         cout.flush();
-        usleep(speed);
+        usleep(speed * 1000);
     }
 }
 
-void line_break() {
+void print_line_break() {
     cout << string(100, '-') << endl;
+}
+
+void pause() {
+    cout << "Press Enter to Continue";
+    cin.ignore();
 }
 
 void print_file(const string &path) {
