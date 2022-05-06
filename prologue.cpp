@@ -1,19 +1,22 @@
 #include <iostream>
-#include "char_creation.h";
-#include <fstream>;
-#include <string>;
+#include "prologue.h"
+#include <fstream>
+#include <string>
 using namespace std;
 
-int character()
+int prolouge() 
 {
 	ifstream fin;
-	fin.open("character.txt");
+	fin.open("prolouge.txt");
+
 	if (fin.fail())
 	{
 		cout << "Error in opening the file" << endl;
 		exit(1);
 	}
+
 	string line;
+	string read;
 	while (getline(fin, line))
 	{
 		cout << line << endl;

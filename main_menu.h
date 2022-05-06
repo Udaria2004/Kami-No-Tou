@@ -1,8 +1,8 @@
 #pragma once
-// mainmenu.h 
+// main_menu.h
 #ifndef MAINMENU_H
 #define MAINMENU_H
 
-int mainmenu();
+int main_menu();
 
 #endif
