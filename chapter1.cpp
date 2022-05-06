@@ -20,9 +20,9 @@ void chap1(player &p1) {
         p1.get_location(false);
     }
     print_intro();
-    slow_print("You arrive at the guild and are greeted by the guilds manager\n", 50);
+    slow_print("You arrive at the guild and are greeted by the guilds manager\n\n", 50);
     print_file("ascii_art/guild.txt");
-    slow_print("Welcome, are you here to sign to become an adventurer?\n", 50);
+    cout << "\nWelcome, are you here to sign to become an adventurer?\n";
     cout << endl << "Hint: Press Y for positive interactions and N for negative interactions" << endl;
     char ch = 'Y';
     cin >> ch;

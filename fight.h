@@ -7,6 +7,6 @@
 
 #include "player.h"
 
-int fight(player p1, int ehp, int ct);
+int fight(player p1, int ehp);
 
 #endif //KAMI_NO_TOU_FIGHT_H

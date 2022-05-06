@@ -21,7 +21,6 @@ void woods(player &p1) // Fight Goblin
     print_line_break();
     char ch = 'H'; //input for yes or no
     int ehp = 60; //Health
-    int edamage = 2; //Damage of Goblin
     string line;
     srand(time(NULL)); // random funp1.c_typeion
     int x = rand() % 10; // Multiply the damage by whatever numbers come under 10
@@ -34,7 +33,7 @@ void woods(player &p1) // Fight Goblin
             print_intro();
             slow_print_file("story/chap2_2.txt", 50);
             pause();
-            fight(p1, ehp, edamage);
+            fight(p1, ehp);
         } else {
             cout << "Returning home" << endl;
             p1.location = 0;

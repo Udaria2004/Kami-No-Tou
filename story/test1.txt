@@ -1,0 +1,4 @@
+Th're is a three-digit numb'r.  
+The second digit is four times as big as the third digit, 
+while the first digit is three less than the second digit.  
+What is the numb'r?
