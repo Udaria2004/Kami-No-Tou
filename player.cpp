@@ -14,7 +14,9 @@ void player::print_stats() {
 }
 
 void player::print_character_art() {
+    cout << "Hola!" << endl;
     print_file("ascii_art/character.txt");
+    cout << endl;
 }
 
 void player::init() {
@@ -24,32 +26,36 @@ void player::init() {
 }
 
 void player::get_name() {
-    cout << "What is thy nameth?: ";
-    getline(cin >> ws, name);
+    cout << "What is thy nameth?: " << flush;
+    cin >> name;
     cout << "Welcome " << name << ", son of Agaroth" << endl;
     cout << "Thy journey begins anew" << endl << endl;
 }
 
 void player::get_char_type() {
-    cout << "Please choose your character type" << endl;
-    cout << " 1. Warrior  |  2. Mage  | 3. Farmer   " << endl;
-    int x;
-    cin >> x;
-    while (x > 3 || x < 1) {
-        cout << "Wrong choice!\nPlease try again!" << endl;
+    cout << "Please choose your character type:" << endl;
+    cout << "1. Warrior  |  2. Mage  | 3. Farmer   " << endl;
+    char x;
+    while (true) {
+        cout << "Choice: ";
         cin >> x;
-        if (x == 1 || x == 2 || x == 3) {
-            assign_stats(x);
+        if (x == '1' || x == '2' || x == '3') {
+            assign_stats(x - '0');
             break;
-        }
+        } else
+            cout << "Think you are special eh? Try again." << endl;
     }
 }
 
 void player::assign_stats(int type) {
-    if (type == 1)
+    if (type == 1) {
+        char_type = "Warrior";
         player_stat = {100, 50, 5, 0, 26};
-    if (type == 2)
+    } else if (type == 2) {
+        char_type = "Mage";
         player_stat = {75, 100, 5, 0, 28};
-    if (type == 3)
+    } else if (type == 3) {
+        char_type = "Farmer";
         player_stat = {80, 50, 10, 0, 24};
+    }
 }

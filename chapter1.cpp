@@ -1,31 +1,36 @@
+#include "bits/stdc++.h"
 #include "chapter1.h"
 #include "utility.h"
-#include "bits/stdc++.h"
 
 using namespace std;
 
-int chap1(int &location1) {
-    string location[4] = {"House", "Woods", "Guild", "Tower"};
+void chap1(int &location1) {
+    vector<string> location = {"House", "Woods", "Guild", "Tower"};
+    print_line_break();
     print_file("ascii_art/location.txt");
-    cout << "-----------------------------------------------------------------------------" << endl;
-    cout << "Current Location:" << location[location1] << endl;
+    print_line_break();
+    cout << "Current Location: " << location[location1] << endl;
     cout << endl;
-    cout << "Move to which location" << endl;
+    cout << "Where to? " << flush;
     cin >> location1;
+    cout << endl;
     while (location1 != 2) {
-        cout << "You were supposed to go the guild!" << endl;
+        if (location1 == 0)
+            cout << "You are already at home" << endl;
+        else
+            cout << endl << "You were supposed to go the guild!" << endl;
         cin >> location1;
         if (location1 == 2) break;
     }
     cout << endl;
-    cout << "-----------------------------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------------------------------" << endl << endl;
     cout << "You arrive at the guild and are greeted by the guilds manager" << endl;
     print_file("ascii_art/guild.txt");
     cout << endl << "Welcome, are you here to sign to become an adventurer?" << endl;
-    cout << "Yes or No" << endl;
-    cout << "Hint: Press Y for positive interactions and N for negative interactions" << endl;
+    cout << endl << "Hint: Press Y for positive interactions and N for negative interactions" << endl;
     char ch = 'Y';
     cin >> ch;
+    ch = toupper(ch);
     cout << endl;
     switch (ch) {
         case 'Y':
@@ -37,18 +42,28 @@ int chap1(int &location1) {
                     << endl;
             break;
         default :
-            cout << "Huh what was that?" << endl;
+            cout << "Huh, what was that?" << endl;
     }
-    cout << "Well, anyways here is your certificate" << endl;
+    for (double i = 0; i < 999999000; i++) {
+    }
+    cout << endl << "Well, anyways here is your certificate" << endl;
     print_file("ascii_art/certificate.txt");
     cout << endl;
-    cout << endl;
     cout << "I suggest that you start practicing at the woods before taking any quests.";
-    cout << endl << "End of conversations" << endl
+    cout << endl << "You can now go to your house to restore health or go to the forest to practice!";
+    cout << endl << "If you want to take a quest, you can go talk to me again later" << endl;
+    cout << "Thank you for taking your time at the adventurers guild. We hope you the very best. Au Revoir!" << endl;
+    cout << endl << "End of conversation" << endl
          << "-----------------------------------------------------------------------------" << endl;
-    cout << endl << "Where do you want to go" << endl;
-    print_file("ascii_art/locations.txt");
-    cout << endl;
-    cin >> location1;
-    return 0;
+    cout << "Enter c to continue...." << endl << endl;
+    char c = 'a';
+    cin >> c;
+    while (c != 'c') {
+        cout << "Did you mean to press 'c'" << endl;
+        cin >> c;
+        if (c == 'c') break;
+    }
+    if (c == 'c') {
+        cout << endl << "-----------------------------------------------------------------------------" << endl;
+    }
 }

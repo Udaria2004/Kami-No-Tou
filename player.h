@@ -11,7 +11,7 @@ struct stats {
 
 class player {
 public:
-    string name;
+    string name, char_type;
     stats player_stat;
 
     void print_stats();

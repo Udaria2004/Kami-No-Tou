@@ -5,6 +5,7 @@
 using namespace std;
 
 int main() {
+    cout << "\e[8;30;130t";
     print_intro();
     main_menu();
 }

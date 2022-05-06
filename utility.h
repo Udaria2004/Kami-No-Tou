@@ -17,4 +17,6 @@ void print_file(const string &path);
 
 void pause();
 
+void slow_print_file(const string &path, int speed);
+
 #endif //KAMI_NO_TOU_UTILITY_H

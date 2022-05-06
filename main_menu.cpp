@@ -11,39 +11,38 @@ using namespace std;
 int input_choice() {
     cout << "1. Rules" << endl
          << "2. Play" << endl
-         << "3. Exit" << endl
-         << "Enter your choice: ";
-    int x;
-    cin >> x;
+         << "3. Exit" << endl;
+    char x;
     while (true) {
-        switch (x) {
-            case 1:
-                return x;
-            case 2:
-                cout << "Transporting you to another world" << endl;
-                slow_print("Please wait...", 200);
-                print_intro();
-                return x;
-            case 3:
-                cout << "Exiting" << endl;
-                exit(1);
-            default :
-                cout << "Invalid choice!" << endl;
-        }
+        cout << "Enter your choice: " << flush;
+        cin >> x;
+        if (x == '1' || x == '2' || x == '3')
+            return x - '0';
+        else
+            cout << "Invalid input!\n" << endl;
     }
 }
 
 void main_menu() {
     player p1;
-    int location1 = 0;
+    int location_p1 = 0;
     int choice = input_choice();
-    if (choice == 0)
+    if (choice == 1)
         print_rules();
-    else if (choice == 1) {
+    else if (choice == 2) {
+        cout << "\nTransporting you to another world" << endl;
+        slow_print("Please wait...", 200);
+        print_intro();
         p1.init();
+        cout << endl;
+        p1.print_stats();
+        pause();
         prologue();
-        chap1(location1);
+        chap1(location_p1);
         cout << endl << "You can now go to your house to restore health";
         cout << "Do you want to take a look at the quests?" << endl;
+    } else if (choice == 3) {
+        slow_print("Hope you had fun!", 200);
+        exit(1);
     }
 }

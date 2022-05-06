@@ -2,7 +2,7 @@
 #ifndef CHAPTER1_H
 #define CHAPTER1_H
 
-int chap1(int &location1);
+void chap1(int &location1);
 
 #endif
 
