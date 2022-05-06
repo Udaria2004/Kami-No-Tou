@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void player::print_stats() {
+void player::print_stats() const {
     cout << name << ", your stats are as follows:" << endl
          << "HP: " << player_stat.hp << endl
          << "MP: " << player_stat.mp << endl

@@ -2,6 +2,7 @@
 #include "chapter1.h"
 #include "utility.h"
 #include "player.h"
+#include "chapter2.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ void print_chapter() {
     pause();
 }
 
-void chap1(player p1) {
+void chap1(player &p1) {
     print_chapter();
     p1.get_location();
     while (p1.location != 2) {
@@ -47,4 +48,5 @@ void chap1(player p1) {
     cout << endl;
     slow_print_file("story/chap1_2.txt", 50);
     pause();
+    chap2(p1);
 }

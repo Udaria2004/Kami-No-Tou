@@ -4,6 +4,6 @@
 
 #include "player.h"
 
-void prologue(player p1);
+void prologue(player &p1);
 
 #endif

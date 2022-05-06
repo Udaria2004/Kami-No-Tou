@@ -3,7 +3,6 @@
 #include "utility.h"
 #include "player.h"
 #include "rules.h"
-#include "chapter1.h"
 #include "prologue.h"
 
 using namespace std;

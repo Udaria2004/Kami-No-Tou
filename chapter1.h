@@ -4,7 +4,7 @@
 
 #include "player.h"
 
-void chap1(player p1);
+void chap1(player &p1);
 
 #endif
 

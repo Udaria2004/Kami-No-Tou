@@ -15,7 +15,7 @@ public:
     string name, char_type;
     stats player_stat;
 
-    void print_stats();
+    void print_stats() const;
 
     void get_char_type();
 

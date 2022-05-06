@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void prologue(player p1) {
+void prologue(player &p1) {
     print_intro();
     slow_print("Prologue", 100);
     cout << endl << endl;
