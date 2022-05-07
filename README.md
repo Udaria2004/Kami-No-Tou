@@ -6,10 +6,12 @@ Udayveer Singh | Arnav Varshney
 
 ## Main Character – Akira
 
-“Kami no Tou” is a text based medieval fantasy role playing game. Akira is a poor orphan who’s just turned 18. Eager to
-start a new life as an adventurer, you guide his choices as he struggles to find his way to fame, fortune or love. You
-must brave dangers, traps and monsters as you ascend the tower. Whether he survives to reach the top or if he should
-sucuumbs to the darkness, all depends on you and the choices you make.
+“Kami no Tou” is a text based medieval fantasy role playing game.
+The main character is from a poor family who’s struggling in his daily life. He has just turned 18 recently and cannot
+wait to earn money by become an adventurer.
+Eager to start a new life as an adventurer, you guide his choices as he struggles to find his way.
+You must brave dangers, traps and monsters as you ascend the tower. Whether he survives to reach the top or if he should
+suffer a gruesome death long before, all depends on you and the choices you make.
 To win the game you must beat the final boss at the top of the tower.
 
 ## Features
@@ -19,7 +21,7 @@ To win the game you must beat the final boss at the top of the tower.
 - Meet and interact with NPCs
 - Fight horde of monsters
 - Go on missions, practice skills and fight deadly battles
-- 3 main classes to choose from - Assassin | Archer | Mage
+- 3 main classes to choose from - Warrior | Mage | Farmer
 
 How each feature will satisfy the requirements:
 
