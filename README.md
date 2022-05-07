@@ -68,3 +68,8 @@ have the best experience possible.
 Our game is an interactive game and therefore doesn't operate on pre-defined input/output files.
 
 Test 1 Answer = 141 | Test 2 Answer = 24
+
+### Disclaimer
+
+We worked on our private repo (https://github.com/Udaria2004/Kami-No-Tou), and therefore, the commit history and
+contributions of this repo aren't updated and/or a real-world representation of our distribution of work.
