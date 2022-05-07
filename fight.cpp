@@ -9,7 +9,7 @@ int fight(player p1, int ehp) {
     int damag;
     int edmg;
     print_intro();
-    if (ehp == 60) {
+    if (ehp == 60) {  // 2 different type of enemy
         edmg = 2;
         flag = 0;
     }
@@ -22,13 +22,13 @@ int fight(player p1, int ehp) {
     while (true) //if health is more than 0 keep the fight going
     {
         int flagMana = 0;
-        int flagpotion = 0;
+        int flagpotion = 0;  // flags for different output conndition
         int flagattack = 0;
         if (flag == 0)print_file("ascii_art/goblin.txt"); //use the file opening function
         if (flag == 1)print_file("ascii_art/ogre.txt");
         cout << endl << "Enemy Health: " << ehp << endl << endl;
         p1.print_stats();
-        cout << "Your turn (1. Attack | 2. Magic | 3. Items | 4. Surrender): ";
+        cout << "Your turn (1. Attack | 2. Magic | 3. Items | 4. Surrender): "; // different options
         cin >> choice;
         while (choice > 4 || choice < 1) //loop for re input wrong choice
         {
@@ -95,7 +95,7 @@ int fight(player p1, int ehp) {
         }
         if (ehp > 0) {
             clear_screen();
-            if (flagpotion == 1) cout << "You do not have enough potions" << endl;
+            if (flagpotion == 1) cout << "You do not have enough potions" << endl;        //Outputting in a clean formatted way
             if (flagMana == 1) cout << "You do not have enough Mana" << endl;
             if (flagattack == 1) cout << endl << "Your attack did " << damag << " damage!" << endl;
             if (flag == 0) cout << "Goblin's turn" << endl;
@@ -108,7 +108,7 @@ int fight(player p1, int ehp) {
         }
         if (p1.player_stat.hp < 1) {
             clear_screen();
-            cout << "You fell unconscious and the monster had a nice meal with your body" << endl << "Game Over"
+            cout << "You fell unconscious and the monster had a nice meal with your body" << endl << "Game Over" //if you lose all your health
                  << endl;
             exit(1);
         }

@@ -11,5 +11,5 @@ void prologue(player &p1) {
     cout << endl << endl;
     slow_print_file("story/prologue.txt", 50);
     prog_pause();
-    chap1(p1);
+    chap1(p1);  //Leads to chapter 1
 }

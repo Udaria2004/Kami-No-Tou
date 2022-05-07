@@ -5,7 +5,7 @@
 #include "chapter3.h"
 #include <unistd.h>
 
-void house(player &p1) {
+void house(player &p1) {   //House :- Restore health of player
     print_intro();
     cin.ignore();
     cout.flush();
@@ -27,10 +27,10 @@ void woods(player &p1) // Fight Goblin
     print_line_break();
     print_intro();
     char ch = 'H'; //input for yes or no
-    int ehp = 60; //Health
+    int ehp = 60; //Health of enemy
     string line;
     srand(time(NULL)); // random funp1.c_typeion
-    int escape = rand() % 2;
+    int escape = rand() % 2;        // Random escape encouter
     int x = rand() % 10; // Random chance of fighting monster
     if (x > 3) {
         cout << "A goblin appears!" << endl;
@@ -39,7 +39,7 @@ void woods(player &p1) // Fight Goblin
         ch = toupper(ch);
         if (ch == 'Y') {
             print_intro();
-            fight(p1, ehp);
+            fight(p1, ehp);  //Fight Simulation
             p1.location = 0;
         } else {
             if (escape == 1)
@@ -52,7 +52,7 @@ void woods(player &p1) // Fight Goblin
             cout << "Returning home" << endl;
             p1.location = 0;
         }
-    } else //if no monsters found
+    } else //if no monsters found   
     {
         cout << "No monsters found" << endl;
         cout << "Would you like to search for items? ";
@@ -71,7 +71,7 @@ void woods(player &p1) // Fight Goblin
         p1.location = 0;
     }
     prog_pause();
-    print_intro();
+    print_intro();         //Game Formatting
 }
 
 void chap2(player &p1) {
@@ -80,7 +80,7 @@ void chap2(player &p1) {
     slow_print_file("story/chap2_1.txt", 50);
     prog_pause();
     print_intro();
-    while (true) {
+    while (true) {             //loop the location so player can go to different locations
         p1.get_location(true);
         if (p1.location == 0) {
             house(p1);

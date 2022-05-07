@@ -8,10 +8,10 @@
 
 using namespace std;
 
-void test1() {
+void test1() {                                  //Minigame #1
     print_intro();
     slow_print("\nTest 1\n", 100);
-    slow_print_file("story/test1.txt", 50);
+    slow_print_file("story/test1.txt", 50);  
     int ans, count = 1;;
     while (count++ < test_chance) {
         cout << endl << "Answer: ";
@@ -31,7 +31,7 @@ void test1() {
     prog_pause();
 }
 
-void test2() {
+void test2() {                                     //Minigame #2
     print_intro();
     slow_print("\nTest 2\n", 100);
     slow_print_file("story/test2.txt", 50);
@@ -56,14 +56,14 @@ void test2() {
 
 void chap3(player &p1) {
     print_intro();
-    slow_print("Chapter 3", 100);
+    slow_print("Chapter 3", 100);         //Chapter 3
     cout << endl << endl;
     slow_print_file("story/chap3_1.txt", 50);
     int flag = 0;
     srand(time(NULL));
-    int x = rand() % 11; // Multiply the damage by whatever numbers come under 10
-    int chance = rand() % 3;
-    int ehp = 100;
+    int x = rand() % 11; // Random damage multiplier 
+    int chance = rand() % 4; // Random encouter with monster
+    int ehp = 100;  // enemy health
     char ch;
     do {
         if (x > 2) {
@@ -94,7 +94,7 @@ void chap3(player &p1) {
     } while (chance-- > 0);
     prog_pause();
     print_intro();
-    slow_print("\nEpilogue\n", 100);
+    slow_print("\nEpilogue\n", 100);  
     if (flag == 1) cout << "Finally after defeating the minions, you reached the top of the tower." << endl;
     else
         cout
