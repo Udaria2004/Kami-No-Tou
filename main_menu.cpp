@@ -23,8 +23,8 @@ int input_choice() {
 }
 
 void main_menu() {
-    player p1;
     while (true) {
+        player p1;
         print_intro();
         int choice = input_choice();
         if (choice == 1)
@@ -32,11 +32,14 @@ void main_menu() {
         else if (choice == 2) {
             cout << "\nTransporting you to another world" << endl;
             slow_print("Please wait...", 100);
+            for (int i = 0; i < 999999990; i++) {
+            }
             print_intro();
             p1.init();
             prologue(p1);
         } else if (choice == 3) {
             slow_print("Hope you had fun!", 100);
+            cout << endl;
             exit(1);
         }
     }

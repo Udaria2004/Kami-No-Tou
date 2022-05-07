@@ -8,13 +8,11 @@ void player::print_stats() const {
     cout << name << ", your stats are as follows:" << endl
          << "HP: " << player_stat.hp << endl
          << "MP: " << player_stat.mp << endl
-         << "Luck:" << player_stat.luck << endl
-         << "Potions: " << player_stat.potion << endl
-         << "Damage: " << player_stat.damage << endl << endl;
+         << "Potions: " << player_stat.potion << endl;
 }
 
 void player::print_character_art() {
-    cout << "Hola!" << endl;
+    cout << "Hola amigo!" << endl;
     print_file("ascii_art/character.txt");
     cout << endl;
 }
@@ -24,13 +22,13 @@ void player::init() {
     get_name();
     get_char_type();
     print_stats();
-    pause();
+    prog_pause();
 }
 
 void player::get_name() {
-    cout << "What is thy nameth?: " << flush;
+    cout << endl << "What is thy nameth?: " << flush;
     cin >> name;
-    cout << "Welcome " << name << ", son of " << name << "oth" << endl;
+    cout << endl << "Welcome " << name << ", son of " << name << "oth" << endl;
     cout << "Thy journey begins anew" << endl << endl;
 }
 
@@ -53,16 +51,17 @@ void player::get_char_type() {
 
 void player::get_location(bool print_locs) {
     vector<string> loc = {"House", "Woods", "Guild", "Tower"};
-    if (print_locs) {
-        cout << endl << endl;
-        print_file("ascii_art/location.txt");
-        cout << endl << endl;
-        cout << "Current Location: " << loc[location] << endl << endl;
-    }
     string temp;
     while (true) {
+        if (print_locs) {
+            cout << endl << endl;
+            print_file("ascii_art/location.txt");
+            cout << endl << endl;
+            cout << "Current Location: " << loc[location] << endl << endl;
+        }
         cout << endl << "Where to? " << flush;
         cin >> temp;
+
         if (temp == to_string(location))
             cout << endl << "You are already there!" << endl;
         else if (temp == "0" || temp == "1" || temp == "2" || temp == "3") {
@@ -76,12 +75,12 @@ void player::get_location(bool print_locs) {
 void player::assign_stats(int type) {
     if (type == 1) {
         char_type = "Warrior";
-        player_stat = {100, 50, 5, 0, 26};
+        player_stat = {100, 50, 5, 1, 6};
     } else if (type == 2) {
         char_type = "Mage";
-        player_stat = {75, 100, 5, 0, 28};
+        player_stat = {100, 100, 5, 1, 5};
     } else if (type == 3) {
         char_type = "Farmer";
-        player_stat = {80, 50, 10, 0, 24};
+        player_stat = {100, 50, 10, 1, 5};
     }
 }

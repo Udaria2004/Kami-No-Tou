@@ -15,7 +15,7 @@ void print_line_break();
 
 void print_file(const string &path);
 
-void pause();
+void prog_pause();
 
 void slow_print_file(const string &path, int speed);
 

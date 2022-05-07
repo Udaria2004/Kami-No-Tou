@@ -23,10 +23,10 @@ void slow_print(const string &text, int speed) {
 }
 
 void print_line_break() {
-    cout << endl << string(80, '-') << endl << endl;
+    cout << endl << string(80, '-') << endl;
 }
 
-void pause() {
+void prog_pause() {
     cout << flush << "\nPress Enter to Continue";
     cin.sync();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');

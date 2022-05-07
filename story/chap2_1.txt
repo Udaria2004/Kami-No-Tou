@@ -1,7 +1,3 @@
-You arrived at the tower. 
-You feel ominous.
-You open the large doors and a greeted by a horrendous sight.
-There is a strong pungent smell emanating from a white substance on the floor.
-It seems to be a decade old, yet it has engraved its marks on the building.
-You immediately sense that it is not ordinary.
-While looking for the owner of the tower, you come across goblins.
+You are at your hometown.
+You can either go to your house to restore your health or go to the forest to practice against monsters.
+You could also go to the guild to accept a accept. 

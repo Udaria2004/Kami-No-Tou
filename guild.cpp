@@ -12,8 +12,19 @@ void guild(player &p1) {
     cin >> ch;
     ch = toupper(ch);
     if (ch == 'Y') {
+        cout << endl;
         slow_print_file("story/guild.txt", 50);
+        cout << endl;
         p1.guild_quest = true;
-    } else
-        cout << "You can come back another time";
+        prog_pause();
+
+        clear_screen();
+        print_intro();
+    } else {
+        cout << "\nYou can come back another time\n";
+        prog_pause();
+
+        clear_screen();
+        print_intro();
+    }
 }

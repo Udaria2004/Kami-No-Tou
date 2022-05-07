@@ -1,0 +1,18 @@
+“Kami no Tou” is a text based medieval fantasy role playing game.
+The main character is from a poor family who’s struggling in his daily life. He has just turned 18 recently and cannot wait to earn money by become an adventurer.
+Eager to start a new life as an adventurer, you guide his choices as he struggles to find his way.
+You must brave dangers, traps and monsters as you ascend the tower. Whether he survives to reach the top or if he should suffer a gruesome death long before, all depends on you and the choices you make.
+To win the game you must beat the final boss at the top of the tower.
+
+For numbered options you must press you must press numbers
+For Yes or No questions, please press Y or N (not case sensitive)
+
+There are mainly 4 locations in the game which you can visit
+1) House
+2) Woods
+3) Guild
+4) Tower
+
+You start by visiting the guild and obtaining your certificate. After that, you may visit the woods to fight goblins.
+Ultimately, you are required to visit the tower to fight the boss and finish the game.
+At any point, you may visit your home to replenish your health.
