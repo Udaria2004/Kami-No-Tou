@@ -42,8 +42,6 @@ void chap1(player &p1) {
             cout << "Huh, what was that?" << endl;
     }
     slow_print("Well, anyways here is your certificate\n\n", 50);
-    for (int i = 0; i < 999900000; i++) {   //Time delay
-    }
     print_file("ascii_art/certificate.txt");
     slow_print("\nCongratulations! You are a noobie ranked adventurer!", 50);
     cin.ignore();

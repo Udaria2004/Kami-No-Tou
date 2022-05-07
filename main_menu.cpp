@@ -32,8 +32,6 @@ void main_menu() {
         else if (choice == 2) {
             cout << "\nTransporting you to another world" << endl;    //New Game
             slow_print("Please wait...", 100);
-            for (int i = 0; i < 999999990; i++) {
-            }                                                 //Time delay
             print_intro();                                //Prints the title of game
             p1.init();                                       // Character Creation
             prologue(p1);                                    
