@@ -7,11 +7,11 @@
 
 using namespace std;
 
-void chap1(player &p1) {
+void chap1(player &p1) {                                 
     print_intro();
     slow_print("Chapter 1", 100);
     cout << endl << endl;
-    slow_print_file("story/chap1_1.txt", 50);
+    slow_print_file("story/chap1_1.txt", 50);             //File input/output
     prog_pause();
     print_intro();
     p1.get_location(true);
@@ -42,12 +42,12 @@ void chap1(player &p1) {
             cout << "Huh, what was that?" << endl;
     }
     slow_print("Well, anyways here is your certificate\n\n", 50);
-    for (int i = 0; i < 999900000; i++) {
+    for (int i = 0; i < 999900000; i++) {   //Time delay
     }
     print_file("ascii_art/certificate.txt");
     slow_print("\nCongratulations! You are a noobie ranked adventurer!", 50);
     cin.ignore();
     prog_pause();
     print_intro();
-    chap2(p1);
+    chap2(p1);  // Lead to chapter two
 }

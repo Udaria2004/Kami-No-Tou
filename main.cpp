@@ -5,6 +5,6 @@
 using namespace std;
 
 int main() {
-    cout << "\e[8;30;130t";
-    main_menu();
+    cout << "\e[8;30;130t"; //Formatting
+    main_menu(); //Main Menu of the Game
 }

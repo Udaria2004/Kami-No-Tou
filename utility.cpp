@@ -4,17 +4,17 @@
 
 using namespace std;
 
-void print_intro() {
+void print_intro() {  //prints introduction
     clear_screen();
     print_file("ascii_art/intro.txt");
     cout << endl;
 }
 
-void clear_screen() {
+void clear_screen() {                  //formatting the screen output
     cout << "\033[2J\033[1;1H";
 }
 
-void slow_print(const string &text, int speed) {
+void slow_print(const string &text, int speed) {   //formatting screen output
     for (auto i: text) {
         cout << i;
         cout.flush();
@@ -28,7 +28,7 @@ void print_line_break() {
 
 void prog_pause() {
     cout << flush << "\nPress Enter to Continue";
-    cin.sync();
+    cin.sync();                                                          //pause the program
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
@@ -36,7 +36,7 @@ void print_file(const string &path) {
     ifstream fin;
     fin.open(path);
     if (fin.fail()) {
-        cout << "Error in opening the file" << endl;
+        cout << "Error in opening the file" << endl;                    // print the file
         exit(1);
     }
     string line;

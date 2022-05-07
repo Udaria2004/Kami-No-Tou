@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void guild(player &p1) {
+void guild(player &p1) {                         //story arc
     print_intro();
     print_file("ascii_art/guild.txt");
     cout << endl << "Welcome back!" << endl << "Do you want to accept the quest? ";

@@ -4,20 +4,20 @@
 
 using namespace std;
 
-void player::print_stats() const {
+void player::print_stats() const {   // Display character stats
     cout << name << ", your stats are as follows:" << endl
          << "HP: " << player_stat.hp << endl
          << "MP: " << player_stat.mp << endl
          << "Potions: " << player_stat.potion << endl;
 }
 
-void player::print_character_art() {
+void player::print_character_art() {   //display character art
     cout << "Hola amigo!" << endl;
     print_file("ascii_art/character.txt");
     cout << endl;
 }
 
-void player::init() {
+void player::init() {       //character creation
     print_character_art();
     get_name();
     get_char_type();
@@ -25,7 +25,7 @@ void player::init() {
     prog_pause();
 }
 
-void player::get_name() {
+void player::get_name() {  
     cout << endl << "What is thy nameth?: " << flush;
     cin >> name;
     cout << endl << "Welcome " << name << ", son of " << name << "oth" << endl;
@@ -49,7 +49,7 @@ void player::get_char_type() {
     cout << endl;
 }
 
-void player::get_location(bool print_locs) {
+void player::get_location(bool print_locs) {                    //location to which player wants to go
     vector<string> loc = {"House", "Woods", "Guild", "Tower"};
     string temp;
     while (true) {
@@ -72,7 +72,7 @@ void player::get_location(bool print_locs) {
     }
 }
 
-void player::assign_stats(int type) {
+void player::assign_stats(int type) {  //dynamic player creation
     if (type == 1) {
         char_type = "Warrior";
         player_stat = {100, 50, 5, 1, 6};
