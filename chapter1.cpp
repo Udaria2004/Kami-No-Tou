@@ -2,7 +2,6 @@
 #include "chapter1.h"
 #include "utility.h"
 #include "player.h"
-#include <unistd.h>
 #include "chapter2.h"
 
 using namespace std;

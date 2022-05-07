@@ -16,15 +16,10 @@ void guild(player &p1) {                         //story arc
         slow_print_file("story/guild.txt", 50);
         cout << endl;
         p1.guild_quest = true;
-        prog_pause();
 
-        clear_screen();
-        print_intro();
-    } else {
+    } else
         cout << "\nYou can come back another time\n";
-        prog_pause();
-
-        clear_screen();
-        print_intro();
-    }
+    cin.ignore();
+    prog_pause();
+    print_intro();
 }

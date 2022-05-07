@@ -18,7 +18,7 @@ void slow_print(const string &text, int speed) {   //formatting screen output
     for (auto i: text) {
         cout << i;
         cout.flush();
-        usleep(speed * 1000);
+        usleep(speed * 800);
     }
 }
 

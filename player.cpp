@@ -22,6 +22,7 @@ void player::init() {       //character creation
     get_name();
     get_char_type();
     print_stats();
+    cin.ignore();
     prog_pause();
 }
 

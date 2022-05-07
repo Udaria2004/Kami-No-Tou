@@ -1,8 +1,8 @@
+#include <unistd.h>
 #include "bits/stdc++.h"
 #include "utility.h"
 #include "player.h"
 #include "fight.h"
-#include <unistd.h>
 
 #define test_chance 5
 
@@ -11,7 +11,7 @@ using namespace std;
 void test1() {                                  //Minigame #1
     print_intro();
     slow_print("\nTest 1\n", 100);
-    slow_print_file("story/test1.txt", 50);  
+    slow_print_file("story/test1.txt", 50);
     int ans, count = 1;;
     while (count++ < test_chance) {
         cout << endl << "Answer: ";
@@ -20,7 +20,7 @@ void test1() {                                  //Minigame #1
             count = -1;
             break;
         }
-        cout << endl << "alas be careful! only " << test_chance - count << " chances remaining" << endl;
+        cout << endl << "Alas be careful! only " << test_chance - count << " chances remaining" << endl;
     }
     if (count == -1)
         cout << endl << "Congratulations thee hath passed the first testeth" << endl;
@@ -28,6 +28,7 @@ void test1() {                                  //Minigame #1
         cout << endl << "You came so far. Better luck next time!" << endl;
         exit(1);
     }
+    cin.ignore();
     prog_pause();
 }
 
@@ -51,6 +52,7 @@ void test2() {                                     //Minigame #2
         cout << endl << "You came so far. Better luck next time!" << endl;
         exit(1);
     }
+    cin.ignore();
     prog_pause();
 }
 
@@ -73,6 +75,7 @@ void chap3(player &p1) {
             cin >> ch;
             ch = toupper(ch);
             if (ch == 'Y') {
+                print_intro();
                 fight(p1, ehp); //fight the goblin
             } else // if u decided to run away, 2 options
             {
@@ -92,26 +95,30 @@ void chap3(player &p1) {
 
         }
     } while (chance-- > 0);
+    cin.ignore();
     prog_pause();
     print_intro();
-    slow_print("\nEpilogue\n", 100);  
-    if (flag == 1) cout << "Finally after defeating the minions, you reached the top of the tower." << endl;
+    slow_print("\nEpilogue\n", 100);
+    if (flag == 1) slow_print("Finally after defeating the minions, you reached the top of the tower.\n", 50);
     else
-        cout
-                << "You were lucky that you did not meet any monsters while ascending the tower. You finally reached the top but....."
-                << endl;
-    cout << "You regretted not exercising enough to increase your stamina. "
-            "You were sure you lost around 50 pounds or somewhere around that much\n \n" << endl;
+        slow_print(
+                "You were lucky that you did not meet any monsters while ascending the tower. You finally reached the top but.....\n",
+                50);
+    slow_print(
+            "You regretted not exercising enough to increase your stamina. You were sure you lost around 50 pounds or somewhere around that much\n\n\n",
+            50);
     print_file("ascii_art/masked_man.txt");
     cout << "Masked Man: Welcome to my humble abode, " << p1.name
          << ". I have been waiting for you, for quite some time now." << endl << "How is " << p1.name << "oth doing?\n";
+    usleep(200000);
     cout << "\nHow do you know my name?? Who told you about my mother??" << endl
          << "ANSWER ME! OR I SHALL STRIKE YOU DOWN WHERE YOU STAND!!!\n" << endl;
+    usleep(200000);
     cout << "Masked Man: Muahhahahaahah, you must complete my tests before you have your way with me. "
             "MUAHAHAHAHA *leaves to a secret room*" << endl;
-    cout << "\nYou must complete the tests to defeat the evil maniac!" << endl << endl;
+    usleep(200000);
+    slow_print("\nYou must complete the tests to defeat the evil maniac!\n\n", 50);
     prog_pause();
-    clear_screen();
     test1();
     test2();
     print_intro();

@@ -3,11 +3,9 @@
 #include "guild.h"
 #include "fight.h"
 #include "chapter3.h"
-#include <unistd.h>
 
 void house(player &p1) {   //House :- Restore health of player
     print_intro();
-    cin.ignore();
     cout.flush();
     print_file("ascii_art/house.txt");
     cout << "\n\nWelcome home!\nHealth and Mana Restored" << flush << endl;
@@ -18,14 +16,16 @@ void house(player &p1) {   //House :- Restore health of player
         p1.player_stat.mp = 100;
     if (p1.c_type == 3)
         p1.player_stat.mp = 50;
+    cin.ignore();
     prog_pause();
     print_intro();
 }
 
 void woods(player &p1) // Fight Goblin
 {
-    print_line_break();
     print_intro();
+    print_file("ascii_art/forest.txt");
+    cout << endl << endl;
     char ch = 'H'; //input for yes or no
     int ehp = 60; //Health of enemy
     string line;
@@ -40,6 +40,7 @@ void woods(player &p1) // Fight Goblin
         if (ch == 'Y') {
             print_intro();
             fight(p1, ehp);  //Fight Simulation
+            cout << "Returning home" << endl;
             p1.location = 0;
         } else {
             if (escape == 1)
@@ -52,7 +53,7 @@ void woods(player &p1) // Fight Goblin
             cout << "Returning home" << endl;
             p1.location = 0;
         }
-    } else //if no monsters found   
+    } else //if no monsters found
     {
         cout << "No monsters found" << endl;
         cout << "Would you like to search for items? ";
@@ -70,6 +71,7 @@ void woods(player &p1) // Fight Goblin
         cout << "Escaped successfully" << endl << "Returning home" << endl;
         p1.location = 0;
     }
+    cin.ignore();
     prog_pause();
     print_intro();         //Game Formatting
 }
@@ -87,14 +89,20 @@ void chap2(player &p1) {
         } else if (p1.location == 1) {
             woods(p1);
         } else if (p1.location == 2) {
-            if (!p1.guild_quest) {
+            if (!p1.guild_quest)
                 guild(p1);
-            } else
+            else
                 cout << "You already accepted the quest!" << endl;
-            clear_screen();
         } else if (p1.location == 3) {
-            chap3(p1);
-            break;
+            if (!p1.guild_quest) {
+                p1.location = 0;
+                cout << "\nHead back to the Guild to accept the quest!\nReturning home" << endl;
+            } else {
+                chap3(p1);
+                break;
+            }
+            cin.ignore();
+            prog_pause();
         }
     }
 }
